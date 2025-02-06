@@ -1,4 +1,5 @@
 {
   "name": "ReInstalledProject",
-  "displayName": "ReInstalledProject"
+  "displayName": "ReInstalledProject",
+  "userInterfaceStyle": "automatic"
 }
