@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View, Image, Text, useColorScheme } from "react-native";
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -81,8 +82,10 @@ const GrayText: React.FC<GrayTextProps> = ({ children, numberOfLines, style }) =
 };
 
 const TweetContent: React.FC<TweetContentProps> = ({ tweet }) => {
+  const { navigate } = useNavigation();
   const theme = useColorScheme();
   return (
+    
     <View style={styles.singleItem}>
       <View style={styles.row}>
         {avatar(tweet.author)}

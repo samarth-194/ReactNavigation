@@ -15,14 +15,6 @@ type RootTabParamList = {
     Settings: undefined;
     Notifications: undefined;
 };
-type TabBarIconProps = {
-    focused: boolean;
-    color: string;
-    size: number;
-};
-
-
-
 const Tab = createBottomTabNavigator<RootTabParamList>();
 const HomeStack = createNativeStackNavigator();
 const HomeStackGroup = () => {
@@ -43,21 +35,21 @@ const TabGroup = () => {
             })}>
             <Tab.Screen name="Feed" component={Feed} options={{
                 tabBarIcon: ({ focused }) => <FontAwesome6Icon
-                    name={focused ? "house" : "house-chimney"}
+                    name="house"
                     color={focused ? "#000000" : "#888888"}
                     size={24}
                 />
             }} />
             <Tab.Screen name="Notifications" component={Notifications} options={{
                 tabBarIcon: ({ focused }) => <FontAwesome6Icon
-                    name={focused ? "bell" : "bell-solid"}
+                    name="bell"
                     color={focused ? "#000000" : "#888888"}
                     size={24}
                 />
             }} />
             <Tab.Screen name="Settings" component={Settings} options={{
                 tabBarIcon: ({ focused }) => <FontAwesome6Icon
-                    name={focused ? "gear" : "gears"}
+                    name="gear"
                     color={focused ? "#000000" : "#888888"}
                     size={24}
                 />
@@ -71,7 +63,6 @@ const Navigation = () => {
     return (
         <NavigationContainer>
             <TabGroup />
-
         </NavigationContainer>
     );
 }
