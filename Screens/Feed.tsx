@@ -26,18 +26,18 @@ type FeedScreenNavigationProp = DrawerNavigationProp<RootDrawerParamList, 'Feed'
 export default function Feed() {
   const navigation = useNavigation<FeedScreenNavigationProp>();
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <Pressable onPress={() => navigation.openDrawer()}>
-          {/* <Image
-            source={require("../../assets/beto.jpeg")}
-            style={{ width: 40, height: 40, borderRadius: 100, marginLeft: 15 }}
-          /> */}
-        </Pressable>
-      ),
-    });
-  }, [navigation]);
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerLeft: () => (
+  //       <Pressable onPress={() => navigation.openDrawer()}>
+  //         {/* <Image
+  //           source={require("../../assets/beto.jpeg")}
+  //           style={{ width: 40, height: 40, borderRadius: 100, marginLeft: 15 }}
+  //         /> */}
+  //       </Pressable>
+  //     ),
+  //   });
+  // }, [navigation]);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -45,11 +45,6 @@ export default function Feed() {
         data={tweets.slice(0, 30)}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Tweet tweet={item} />}
-        ListHeaderComponent={() => (
-          <View style={styles.header}>
-            <Text style={styles.headerTitle}>New tweets available</Text>
-          </View>
-        )}
         ListHeaderComponentStyle={{ backgroundColor: "#ccc" }}
         ItemSeparatorComponent={() => <View style={styles.divider} />}
       />
